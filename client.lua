@@ -7,6 +7,13 @@ AddEventHandler('meteo:actu', function(data)
 	SetWind(1.0)
 	SetWindSpeed(data["VitesseVent"]);
 	SetWindDirection(data["DirVent"])
+    if data["Meteo"] == "XMAS" then
+        SetForceVehicleTrails(true)
+        SetForcePedFootstepsTracks(true)
+    else
+        SetForceVehicleTrails(false)
+        SetForcePedFootstepsTracks(false)
+    end
 end)
 
 AddEventHandler('onClientMapStart', function()
